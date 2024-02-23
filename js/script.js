@@ -16,7 +16,7 @@ let userName;
 
 let number;
 number = "10";
-console.log(typeof number);
+console.log(typeof number); // string
 
 number = 10;
-console.log(typeof number);
+console.log(typeof number); // number
