@@ -1,7 +1,7 @@
 `use strict`;
+// Task#1
 
-
-// Task#
+// Task#2
 const test = confirm("Згенерувати випадкове п'ятизначне число");
 console.log(test);
 if ( test === true) {
