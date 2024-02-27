@@ -1,6 +1,12 @@
 `use strict`;
 // Task#1
 
+const first = prompt(`Введіть будь яке перше бажання!`);
+const second = prompt(`Введіть будь яке друге бажання!`);
+const third = prompt(`Введіть будь яке друге бажання!`);
+const desire = first+second+third;
+alert(`Ви забажали ${desire}. Ваші бажання здійсняться найближчим часом  Працюйте над цим!`);
+
 // Task#2
 const test = confirm("Згенерувати випадкове п'ятизначне число");
 console.log(test);
