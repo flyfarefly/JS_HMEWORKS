@@ -19,8 +19,7 @@ console.log(typeof userName); // object
 
 // Task #3
 
-let number = null;
-number = "10";
+let number = "10";
 console.log(typeof number); // string
 
 number = 10;
