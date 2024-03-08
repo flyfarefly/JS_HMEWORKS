@@ -93,7 +93,7 @@ if (a > 2 && a < 11 || b >= 6 && b < 14){
 //
 //     const season = (randomInt(1,4));
 //     alert(season);
-//     let cost;
+//     let cost = String();
 //     switch (season) {
 //             case 1 :
 //             cost = "Зима";
@@ -120,20 +120,21 @@ if (a > 2 && a < 11 || b >= 6 && b < 14){
 // #13.2
 
 // const num = +prompt("Введіть число від 1 до 4");
+// let result = String();
 // if ( num === false) {
 //     alert( "Введіть число!");
 //
 // } else if ( num === 1) {
-//     let result = "Зима";
+//     result = "Зима";
 //     console.log (result);
 // } else if ( num === 2) {
-//     let result = "Весна";
+//     result = "Весна";
 //     console.log (result);
 // } else if ( num === 3) {
-//     let result = "Літо";
+//     result = "Літо";
 //     console.log (result);
 // } else if ( num === 4) {
-//     let result = "Осінь";
+//     result = "Осінь";
 //     console.log (result);
 // } else {
 //     alert("Спробуйте ще раз!");
@@ -141,13 +142,13 @@ if (a > 2 && a < 11 || b >= 6 && b < 14){
 
 // #13.3
 
-
 const num = +prompt("Введіть число від 1 до 4");
 if ( num === false) {
     alert("Введіть число!");
 } else if (num === true){
     alert("Спробуйте ще раз!");
 } else {
+    let result = String();
     switch (num) {
         case 1 :
             result = "Зима";
