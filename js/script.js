@@ -1,6 +1,6 @@
 `use strict`;
 const myNumber = +prompt(`Введіть число`);
-const findSmallestDivisor =  function (number) {
+const findSmallestDivisor = function (number) {
     if (number === 1) {
         return 1; // Якщо число менше або дорівнює 1, то мінімальний дільник - 1
     }
