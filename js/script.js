@@ -1,16 +1,18 @@
 `use strict`;
 
+const numOrStr = prompt('Введіть число або рядок');
+console.log(numOrStr);
 
-let numOrStr = prompt('input number or string');
-console.log(numOrStr)
-
-if(numOrStr === null) {
-    console.log('ви скасували')
-} else if( numOrStr.trim() === '' ) {
-    console.log('Empty String');
-} else if ( isNaN( +numOrStr ) ) {
-    console.log(' number is Ba_NaN')
-} else {
-    console.log('OK!')
+switch (true) {
+    case numOrStr === null:
+        console.log('Ви скасували');
+        break;
+    case numOrStr.trim() === '':
+        console.log('Порожній рядок');
+        break;
+    case isNaN(+numOrStr):
+        console.log('Не число (NaN)');
+        break;
+    default:
+        console.log('OK!');
 }
-
