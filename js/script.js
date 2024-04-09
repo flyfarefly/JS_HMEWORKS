@@ -7,7 +7,7 @@ if (userInput === null) {
     if (isNaN(number) || number < 0 || number >= 124) {
         alert('Ви ввели неправильні дані. Будь ласка, введіть число.');
     } else {
-        let word = '';
+        let word;
         if (number === 0 || (number >= 5 && number <= 20)) {
             word = 'років';
         } else if (number % 10 === 1) {
