@@ -1,27 +1,22 @@
 `use strict`;
-const age = prompt(`Cкільки вам років? Введіть число від 1 до 124`);
-let ageString = String();
-
-console.log( age, typeof age)
-
-if ( age === null) {
-    alert(`Шкода, що ви не ввели скільки вам років!`);
+const userInput = prompt(`Скільки вам років? Введіть число від 1 до 124`);
+if (userInput === null) {
+    alert('Ви скасували введення.');
 } else {
-    if (isNaN(Number(age))) {
-        alert('Напишіть число, будь ласка!');
-    } else if (age < 1 || age > 124){
-        console.log ( `Ви ввели не коректне значення`);
-    } else if (age === 1 || age === 21 || age === 31 || age === 41|| age === 51 || age === 61 || age === 71|| age === 81 || age === 91 || age === 101|| age === 121){
-        ageString = "рік";
-        alert(` Вам ${age} ${ageString}`);
-
-    } else if ( age === 2 || age <=4 && age >= 22 || age <=24) {
-        ageString = "роки";
-        alert(` Вам ${age} ${ageString}`);
-
-    } else if ( age => 5 || age < 20) {
-        ageString = "років";
-        alert(` Вам ${age} ${ageString}`)
+    const number = parseFloat(userInput);
+    if (isNaN(number) || number < 0 || number >= 124) {
+        alert('Ви ввели неправильні дані. Будь ласка, введіть число.');
+    } else {
+        let word = '';
+        if (number === 0 || (number >= 5 && number <= 20)) {
+            word = 'років';
+        } else if (number % 10 === 1) {
+            word = 'рік';
+        } else if (number % 10 >= 2 && number % 10 <= 4) {
+            word = 'роки';
+        } else {
+            word = 'років';
+        }
+        alert(`Вам ${number} ${word}.`);
     }
-    alert(`Спробуйте ще!`);
 }
