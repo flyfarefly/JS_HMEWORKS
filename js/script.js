@@ -1,10 +1,10 @@
 `use strict`;
-const userInput = prompt(`Скільки вам років? Введіть число від 1 до 124`);
+const userInput = prompt(`Скільки вам років? Введіть число.`);
 if (userInput === null) {
     alert('Ви скасували введення.');
 } else {
     const number = parseFloat(userInput);
-    if (isNaN(number) || number < 0 || number >= 124) {
+    if (isNaN(number)) {
         alert('Ви ввели неправильні дані. Будь ласка, введіть число.');
     } else {
         let word;
