@@ -1,0 +1,22 @@
+{
+  "name": "js_homeworks",
+  "version": "1.0.0",
+  "description": "Зареєструватися на https://github.com/ якщо у вас там немає аккаунта\r     створити шаблон ДЗ як я показував на уроці \r     в вашому репозиторії повинна бути тільки гілка main або master з файловою структурою котру я показував на уроці, інші гілки створювати не потрібно",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flyfarefly/JS_HOMEWORKS.git"
+  },
+  "keywords": [
+    "hello"
+  ],
+  "author": "flyfarefly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flyfarefly/JS_HOMEWORKS/issues"
+  },
+  "homepage": "https://github.com/flyfarefly/JS_HOMEWORKS#readme"
+}
