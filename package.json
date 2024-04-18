@@ -21,5 +21,8 @@
   "homepage": "https://github.com/flyfarefly/JS_HOMEWORKS#readme",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "prettier": "3.2.5"
   }
 }
