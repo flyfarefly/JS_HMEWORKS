@@ -20,6 +20,8 @@ module.exports = {
   },
   rules: {
     "no-console": "off",
+    "wrap-iife": ["error", "any"],  // Ensures IIFEs are wrapped in parentheses
+    "no-extra-parens": ["error", "functions"],
   },
   ignorePatterns: [".eslintrc.js"],
 };
