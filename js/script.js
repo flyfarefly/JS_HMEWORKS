@@ -1,5 +1,6 @@
+// eslint-disable-next-line func-names
 (function () {
-  // eslint-disable-next-line no-unused-expressions
+  // eslint-disable-next-line no-unused-expressions,quotes
   `use strict`;
   const user = {
     firstName: "Vova",
