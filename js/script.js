@@ -23,4 +23,17 @@
   console.log(sum(3)); // 3
   console.log(sum(5)); // 8
   console.log(sum(20)); // 28
+
+  const sum1 = (param) => {
+    let result = param;
+
+    return (number) => {
+      result += number;
+      return result;
+    };
+  };
+
+  const example = sum1(3);
+  console.log(example(5));
+  console.log(example(20));
 })();
