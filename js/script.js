@@ -22,9 +22,9 @@
 
   const iterator = createArrayIterator(myArray);
 
-  console.log(iterator.next()); // { value: 1, done: false }
-  console.log(iterator.next()); // { value: 2, done: false }
-  console.log(iterator.next()); // { value: 3, done: false }
-  console.log(iterator.next()); // { value: 4, done: false }
-  console.log(iterator.next()); // { done: true }
+  console.log(iterator.next().value); // { value: 1, done: false }
+  console.log(iterator.next().value); // { value: 2, done: false }
+  console.log(iterator.next().value); // { value: 3, done: false }
+  console.log(iterator.next().value); // { value: 4, done: false }
+  console.log(iterator.next().value); // { done: true }
 })();
