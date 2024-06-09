@@ -7,6 +7,7 @@ function deepFreeze(object) {
   console.log(propNames);
 
   // Заморожування властивостей, перед заморожуванням самого себе
+  // eslint-disable-next-line no-restricted-syntax
   for (const name of propNames) {
     const value = object[name];
 
