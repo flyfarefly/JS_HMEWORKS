@@ -1,76 +1,57 @@
 // eslint-disable-next-line no-unused-expressions,quotes
 `use strict`;
+// eslint-disable-next-line func-names
+(function () {
+  function deepFreeze(obj) {
+    const myObject = { obj };
+    const keys = Object.keys(myObject);
 
-function deepFreeze(object) {
-  // Отримання назв означених на об'єкті властивостей
-  const propNames = Reflect.ownKeys(object);
-  console.log(propNames);
+    console.log(myObject);
 
-  // Заморожування властивостей, перед заморожуванням самого себе
-  // eslint-disable-next-line no-restricted-syntax
-  for (const name of propNames) {
-    const value = object[name];
+    keys.forEach(() => {
+      // const descriptors = Object.getOwnPropertyDescriptors(obj);
+      const descriptors = Object.defineProperties(obj, {
+        [keys]: {
+          configurable: true,
+          writable: true,
+        },
+      });
 
-    if ((value && typeof value === 'object') || typeof value === 'function') {
-      deepFreeze(value);
+      console.log(keys, descriptors);
+    });
+
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key in obj) {
+      if (
+        Object.prototype.hasOwnProperty.call(obj, key) &&
+        typeof obj[key] === 'object'
+      ) {
+        deepFreeze(obj[key]);
+      }
     }
   }
 
-  return Object.freeze(object);
-}
-
-// const obj2 = {
-//   internal: {
-//     a: null,
-//     b: null,
-//   },
-// };
-
-const obj2 = {
-  data: {
-    a: 1,
-    b: 2,
-    c: 3,
-    d: {
-      a1: 1,
-      b1: 2,
-      c1: 3,
-      d1: {
-        a2: 3,
-        b2: 3,
-        c2: 3,
+  const obj2 = {
+    data: {
+      a: 1,
+      b: 2,
+      c: 3,
+      d: {
+        a1: 1,
+        b1: 2,
+        c1: 3,
+        d1: {
+          a2: 3,
+          b2: 3,
+          c2: 3,
+        },
       },
     },
-  },
-};
+  };
 
-Object.defineProperty(obj2, 'data', {
-  writable: true,
-  configurable: false,
-  enumerable: false,
-});
+  deepFreeze(obj2);
 
-const descriptor = Object.getOwnPropertyDescriptor(obj2, 'data');
-
-console.log(descriptor);
-console.log(deepFreeze(obj2));
-console.log(descriptor);
-console.log(Object.isExtensible(obj2));
-console.log(Object.isFrozen(obj2));
-
-//
-// const employee = {
-//   name: 'Маянк',
-//   designation: 'Розробник',
-//   address: {
-//     street: 'Рогіні',
-//     city: 'Делі',
-//   },
-// };
-//
-// Object.freeze(employee);
-//
-// employee.name = 'Кінь в пальто'; // мовчки не спрацьовує в несуворому режимі
-// employee.address.city = 'Нойда'; // атрибути дочірніх об'єктів можна модифікувати
-//
-// console.log(employee.address.city); // "Нойда"
+  console.log(obj2);
+  console.log(Object.isExtensible(obj2));
+  console.log(Object.isFrozen(obj2)); // true
+})();
