@@ -9,7 +9,7 @@ module.exports = {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: [".eslintrc.{scripts,cjs}"],
       parserOptions: {
         sourceType: "script",
       },
@@ -23,5 +23,5 @@ module.exports = {
     "wrap-iife": ["error", "any"], // Ensures IIFEs are wrapped in parentheses
     "no-extra-parens": ["error", "functions"],
   },
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: [".eslintrc.scripts"],
 };
