@@ -20,6 +20,8 @@ module.exports = {
   },
   rules: {
     "no-console": "off",
+    "wrap-iife": "error",
+    "strict": "error",
   },
   ignorePatterns: [".eslintrc.js"],
 };
