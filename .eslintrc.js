@@ -19,9 +19,33 @@ module.exports = {
     ecmaVersion: "latest",
   },
   rules: {
-    "no-console": "off",
-    "wrap-iife": ["error", "any"], // Ensures IIFEs are wrapped in parentheses
-    "no-extra-parens": ["error", "functions"],
+    "object-curly-newline": ["error", { "minProperties": 1 }],
+    "object-curly-spacing": ["error", "always"],
+    "object-property-newline": "error",
+    'no-console': 'off',
+    "class-methods-use-this": "off",
+    'wrap-iife': ['error', 'any'], // Ensures IIFEs are wrapped in parentheses
+    'no-extra-parens': ['error', 'functions'],
+    "no-underscore-dangle": "off",
+    "no-plusplus": "off",
+    "comma-dangle": "error",
+    "curly": "error",
+    "no-alert": "error",
+    "operator-linebreak": "error",
+    "no-undefined": "error",
+    "nonblock-statement-body-position": "error",
+    "accessor-pairs": "error",
+    "no-multi-spaces": ["error", {
+      "ignoreEOLComments": true,
+      "exceptions": {
+        "AssignmentExpression": true,
+        "ArrowFunctionExpression": true,
+        "CallExpression": true,
+        "VariableDeclarator": true
+      }
+    }
+    ],
+
   },
   ignorePatterns: [".eslintrc.js"],
 };

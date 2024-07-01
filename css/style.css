@@ -1,0 +1,4 @@
+.comment-section{
+    height: calc(100vh - 6rem);
+    overflow-y: scroll;
+}
