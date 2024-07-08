@@ -1,26 +1,10 @@
-// eslint-disable-next-line no-unused-expressions,quotes
 `use strict`;
-// eslint-disable-next-line func-names
 (function () {
   function deepFreeze(obj) {
-    const myObject = { obj };
-    const keys = Object.keys(myObject);
+    // Заморожуємо властивості об'єкта
+    Object.freeze(obj);
 
-    console.log(myObject);
-
-    keys.forEach(() => {
-      // const descriptors = Object.getOwnPropertyDescriptors(obj);
-      const descriptors = Object.defineProperties(obj, {
-        [keys]: {
-          configurable: true,
-          writable: true,
-        },
-      });
-
-      console.log(keys, descriptors);
-    });
-
-    // eslint-disable-next-line no-restricted-syntax
+    // Рекурсивно заморожуємо всі вкладені об'єкти
     for (const key in obj) {
       if (
         Object.prototype.hasOwnProperty.call(obj, key) &&
@@ -31,7 +15,8 @@
     }
   }
 
-  const obj2 = {
+  // Приклад використання:
+  const user = {
     data: {
       a: 1,
       b: 2,
@@ -49,9 +34,13 @@
     },
   };
 
-  deepFreeze(obj2);
+  deepFreeze(user);
 
-  console.log(obj2);
-  console.log(Object.isExtensible(obj2));
-  console.log(Object.isFrozen(obj2)); // true
+  // Перевірка, чи об'єкт заморожений
+  user.data.d.a1 = 100; // Заборонено, не відбудеться зміна
+  console.log(user.data.d.a1); // Виведе початкове значення 1
+
+  console.log(user);
+  console.log(Object.isExtensible(user));
+  console.log(Object.isFrozen(user)); // true
 })();
