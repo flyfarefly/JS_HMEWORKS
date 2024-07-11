@@ -19,10 +19,12 @@ module.exports = {
     ecmaVersion: "latest",
   },
   rules: {
+    "func-names": "off",
     "no-console": "off",
-    "wrap-iife": ["error", "any"],  // Ensures IIFEs are wrapped in parentheses
-    "no-extra-parens": ["error", "functions"],  // Disallows unnecessary parentheses around functions
-    "no-unused-expressions": "error"  // Errors on unused expressions which might be misused IIFEs
+    "wrap-iife": ["error", "any"], // Ensures IIFEs are wrapped in parentheses
+    "no-extra-parens": ["error", "functions"], // Disallows unnecessary parentheses around functions
+    "no-unused-expressions": "error", // Errors on unused expressions which might be misused IIFEs
+    "quotes": ["off", "single"],
   },
   ignorePatterns: [".eslintrc.js"],
 };
